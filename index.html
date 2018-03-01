@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/main.css">
+
+        <title>Aerolab Coding Challenge</title>
+    </head>
+    <body>
+        <!-- Start of page content -->
+
+        <div class="container-fluid">
+            <header>
+                <div class="app-header-header">
+                    <img src="assets/aerolab-logo.svg" class="app-header-logo" alt="aerolab">
+                    <div id="app-user-stats" class="move-right">
+                        <div class="app-user-name">
+                            <span></span>
+                        </div>
+                        <div class="app-user-points">
+                            <span></span>
+                            <div class="icon-coin">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="app-header">
+                    <img src="assets/header-x1.png" alt="ecommerce">
+                    <h1>Electronics</h1>
+                </div>
+            </header>
+
+            <div class="app-main-container">
+                <div class="container">
+                    <nav>
+                        <ul class="app-products-filter">
+                            <li><span id="app-prodend"></span> of <span id="app-totalprods"></span> products</li>
+                            <li>Sort by:</li>
+                            <li><a order-n="0" class="active">Most recent</a></li>
+                            <li><a order-n="1">Lowest price</a></li>
+                            <li><a order-n="-1">Highest price</a></li>
+                        </ul>
+                        <ul class="app-products-pagenav">
+                            <li><a onclick="goTo(-1)"><img src="assets/icons/arrow-left.svg" alt="Prev"></a></li>
+                            <li><a onclick="goTo(1)"><img src="assets/icons/arrow-right.svg" alt="Next"></a></li>
+                        </ul>
+                    </nav>
+                    <div class="row" id="app-products-list">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- End of page content -->
+
+        <!-- Base scripts for Bootstrap -->
+        <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script type="text/javascript" src="js/bootstrap.min.js"></script>
+        <!-- App Scripts -->
+        <script type="text/javascript" src="js/utils.js"></script>
+        <script type="text/javascript" src="js/ajax.js"></script>
+        <script type="text/javascript" src="js/main.js"></script>
+        <script type="text/javascript">
+            $("a[order-n]").click(function(e) {
+                $("a[order-n]").each(function(e) {
+                    console.info(e);
+                    this.classList.remove("active");
+                });
+                this.classList.add("active");
+                sortProducts(parseInt(this.getAttribute("order-n")));
+            });
+        </script>
+    </body>
+</html>

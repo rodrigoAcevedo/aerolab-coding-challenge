@@ -1,0 +1,345 @@
+/* Main stylesheet */
+
+body {
+    background-color: #eceef3;
+}
+
+header {
+    background-color: #fff;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.app-header {
+    position: relative;
+    overflow: hidden;
+    max-height: 340px;
+}
+
+.app-header-header {
+    width: 100%;
+    padding: 12pt 0;
+    position: relative;
+}
+
+.app-header-logo {
+    position: absolute;
+    left: 31.5pt;
+    top: 16.5pt;
+}
+
+.app-header h1 {
+    position: absolute;
+    left: 99pt;
+    bottom: 36pt;
+    font-family:SourceSansPro-Bold, sans-serif;
+    font-size:48pt;
+    color:#ffffff;
+    text-align:left;
+}
+
+.app-header img {
+    width: 100%;
+    height: auto;
+}
+
+.app-main-container div.container nav {
+    font-family:SourceSansPro-Regular, sans-serif;
+    font-size:18pt;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    color: #a3a3a3;
+
+    padding-top: 48pt;
+}
+
+.app-main-container div.container nav ul {
+    margin-bottom: 18pt;
+}
+
+.app-main-container div.container nav li {
+    margin-right: 18pt;
+}
+
+.app-main-container div.container nav li:last-child {
+    margin-right: 0;
+}
+
+.app-main-container div.container nav li:first-child {
+    color: #616161;
+}
+
+.app-main-container div.container nav .app-products-filter li:first-child {
+
+    position: relative;
+}
+
+.app-main-container div.container nav .app-products-filter li:nth-child(2) {
+    margin-left: 18pt;
+}
+
+.app-main-container div.container nav .app-products-filter li:first-child::after {
+    content:"";
+    position: absolute;
+    right: -18pt;
+    height: 100%;
+    width: 1px;
+    background-color: #d9d9d9;
+}
+
+.app-main-container div.container nav:after {
+    content:"";
+    display: block;
+    clear: both;
+    height: 1px;
+    width: 100%;
+    margin-bottom: 31.5pt;
+    background-color: #d9d9d9;
+}
+
+.app-products-filter, .app-products-filter li {
+    float: left;
+}
+
+.app-products-pagenav {
+    float: right;
+}
+
+.app-products-pagenav li {
+    float: left;
+}
+
+.app-products-pagenav li a {
+
+}
+
+a[order-n] {
+    display: block;
+    font-family:SourceSansPro-Regular, sans-serif;
+    font-size:18pt;
+    letter-spacing:-0.15px;
+    line-height:48px;
+    text-align:left;
+    padding: 0 18pt;
+    border-radius:20px;
+    transition: 0.3s all ease;
+}
+
+a[order-n]:hover, a[order-n].active {
+    color: #fff !important;
+    background:#0ad4fa;
+}
+
+.app-main-container {
+    background:#f9f9f9;
+}
+
+#app-user-stats {
+    margin-right: 31.5pt;
+}
+
+.app-user-name, .app-user-points {
+    float: left;
+    font-size: 18pt;
+    color: #616161;
+    letter-spacing: -.15px;
+    line-height: 48px;
+    text-align: left;
+}
+
+.app-user-name {
+    margin-right: 13.5pt;
+}
+
+.app-user-points {
+    background:#ededed;
+    border-radius:18pt;
+    height:36pt;
+    padding-left: 9pt;
+    padding-right: 9pt;
+}
+
+.app-user-points>* {
+    display: inline-block;
+}
+
+.app-product {
+    background-color: #fff;
+    padding: 9pt;
+    box-shadow:2px 2px 4px 0 rgba(0,0,0,0.10);
+}
+
+@media (min-width: 992px) {
+    .app-product.col-md-3 {
+        max-width: calc(25% - 18pt);
+        margin-bottom: 18pt;
+        margin-right: 18pt;
+    }
+}
+
+.app-product:nth-child(4n) {
+    margin-right: 0;
+}
+
+.app-product .app-redeem-icon, .app-product .app-redeem-window {
+    display: none;
+}
+
+.app-product>span {
+    font-family:SourceSansPro-Regular, sans-serif;
+    font-size:12pt;
+    color:#a3a3a3;
+    letter-spacing:-0.04px;
+    text-align:left;
+}
+
+.app-product>h1 {
+    font-family:SourceSansPro-Regular, sans-serif;
+    font-size:13.5pt;
+    color:#616161;
+    letter-spacing:-0.04px;
+    text-align:left;
+}
+
+.app-product .app-redeem-btn {
+    display: block;
+    background:#ffffff;
+    width:228px;
+    height:42px;
+    font-family:SourceSansPro-Regular, sans-serif;
+    font-size:13.5pt;
+    color:#616161;
+    letter-spacing:-0.04px;
+    text-align:center;
+    border-radius: 24px;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding-top: 6pt;
+    padding-bottom: 11pt;
+
+    cursor: pointer;
+}
+
+.app-product-available {
+    bottom: 0;
+    transition: 0.3s all ease;
+}
+
+.app-product-available:hover {
+    bottom: 9pt;
+    box-shadow: 10pt 10pt 40pt #888888;
+}
+
+.app-buy-default, .app-buy-hover, .app-product-available:hover .app-buy-default {
+    display: none;
+    box-shadow: none;
+}
+
+.app-product-available .app-buy-default, .app-product-available:hover .app-buy-hover {
+    display: inline;
+}
+
+.app-product-available .app-needed-points {
+    display: none;
+}
+
+.app-product-available .app-redeem-icon {
+    display: inline !important;
+
+    position: absolute;
+    top: 9pt;
+    right: 9pt;
+}
+
+.app-product-available .app-redeem-window {
+    display: block;
+    /*background-image:linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);*/
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    transition: 0.3s all ease;
+}
+
+.app-product-available .app-redeem-window:before {
+    content: "";
+    position: absolute;
+    background-image:linear-gradient(-180deg, #0ad4fa 0%, #25bbf1 100%);
+    opacity: 0.7;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.app-product-available:hover .app-redeem-window {
+    opacity: 1;
+}
+
+.app-needed-points {
+    display: block;
+    opacity:0.8;
+    background:#616161;
+    border-radius:100px;
+    width:142px;
+    height:42px;
+
+    position: absolute;
+    top: 9pt;
+    right: 9pt;
+}
+
+.app-needed-points span.attention {
+    font-family: SourceSansPro-Regular, sans-serif;
+    font-size:10.5pt;
+    color:#ffffff;
+    letter-spacing:-0.03px;
+    text-align:right;
+
+    position: absolute;
+    top: 8.25pt;
+    left: 11.25pt;
+}
+
+.app-needed-points div.icon-coin {
+    display: inline-block;
+    position: absolute;
+    top: 8.25pt;
+    right: 11.25pt;
+}
+
+.icon-coin {
+    background-image:radial-gradient(50% -18%, #ffcf00 50%, #f7ae15 100%);
+    width:20px;
+    height:20px;
+    border-radius:100%;
+}
+
+.move-left {
+    float: left;
+}
+
+.move-right {
+    float: right;
+}
+
+.hide {
+    display: none;
+}
+
+.img-responsive {
+    max-width: 100%;
+    max-height: 100%;
+}
